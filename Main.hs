@@ -29,9 +29,9 @@ genRectsInDiagonal n  = [((m*(w+gap), (m*(w+gap))), w+20*m, h) | m <- [0..fromIn
   where (w,h) = (50,50)
         gap = 5
 
-createCirc :: Float -> Int -> String
-createCirc r ncirc = 
-  printf (unlines $ ["   " ++ svgCircle ((x,y),20) (svgStyle (last (take (z+1) (bluePalette ncirc 80 10)))) | z <- [0..(ncirc-1)], x <- [(r + 50) + (r * (cos((fromIntegral z)*2*pi/(fromIntegral ncirc))))], y <- [(r + 50) + (r * (sin((fromIntegral z)*2*pi/(fromIntegral ncirc))))]])
+createCirc :: Float -> Int -> Int -> Int -> String
+createCirc r ncirc varX varY = 
+  printf (unlines $ ["   " ++ svgCircle ((x,y),20) (svgStyle (last (take (z+1) (bluePalette ncirc 80 10)))) | z <- [0..(ncirc-1)], x <- [(r + fromIntegral varX) + (r * (cos((fromIntegral z)*2*pi/(fromIntegral ncirc))))], y <- [(r + fromIntegral varY) + (r * (sin((fromIntegral z)*2*pi/(fromIntegral ncirc))))]])
 -------------------------------------------------------------------------------
 -- Strings SVG
 -------------------------------------------------------------------------------
@@ -72,24 +72,21 @@ svgElements func elements styles = concat $ zipWith func elements styles
 img1 :: IO ()
 img1 = do
   writeFile "img1.svg" $ svgstrs
-  where svgstrs = svgBegin w h ++ svgfigs ++ svgEnd
+  where svgstrs = svgBegin w h ++ svgfigs ++ createCirc r c desX desY ++ createCirc r c desX2 desY2 ++ svgEnd
         svgfigs = svgElements svgRect rects (map svgStyle palette)
         rects = genRectsInDiagonal nrects
         palette = bluePalette nrects ini variancia
         nrects = 20
         ini = 10
         variancia = 10
-        (w,h) = (1500,1500) 
-
-img2 :: IO()
-img2 = do
-  writeFile "img2.svg" $ svgstr
-  where svgstr = svgBegin w h ++ createCirc r c ++ svgEnd
-        (w, h) = (550, 550)
-        r = 100
-        c = 15
+        r = 200
+        c = 20
+        desX = 800
+        desY = 60
+        desX2 = 60
+        desY2 = 800
+        (w,h) = (1400,1500) 
 
 main :: IO()
 main = do
   img1
-  img2

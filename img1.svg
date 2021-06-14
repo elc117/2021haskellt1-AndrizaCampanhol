@@ -1,4 +1,4 @@
-<svg width='1500.00' height='1500.00' xmlns='http://www.w3.org/2000/svg'>
+<svg width='1400.00' height='1500.00' xmlns='http://www.w3.org/2000/svg'>
 <rect x='0.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,10,100); mix-blend-mode: screen;' />
 <rect x='55.000' y='55.000' width='70.00' height='50.00' style='fill:rgb(0,20,110); mix-blend-mode: screen;' />
 <rect x='110.000' y='110.000' width='90.00' height='50.00' style='fill:rgb(0,30,120); mix-blend-mode: screen;' />
@@ -19,4 +19,44 @@
 <rect x='935.000' y='935.000' width='390.00' height='50.00' style='fill:rgb(0,180,270); mix-blend-mode: screen;' />
 <rect x='990.000' y='990.000' width='410.00' height='50.00' style='fill:rgb(0,190,280); mix-blend-mode: screen;' />
 <rect x='1045.000' y='1045.000' width='430.00' height='50.00' style='fill:rgb(0,200,290); mix-blend-mode: screen;' />
+   <circle cx='1200.000' cy='260.000' r='20.00' style='fill:rgb(0,80,100); mix-blend-mode: screen;'/>
+   <circle cx='1190.211' cy='321.803' r='20.00' style='fill:rgb(0,90,110); mix-blend-mode: screen;'/>
+   <circle cx='1161.804' cy='377.557' r='20.00' style='fill:rgb(0,100,120); mix-blend-mode: screen;'/>
+   <circle cx='1117.557' cy='421.803' r='20.00' style='fill:rgb(0,110,130); mix-blend-mode: screen;'/>
+   <circle cx='1061.803' cy='450.211' r='20.00' style='fill:rgb(0,120,140); mix-blend-mode: screen;'/>
+   <circle cx='1000.000' cy='460.000' r='20.00' style='fill:rgb(0,130,150); mix-blend-mode: screen;'/>
+   <circle cx='938.197' cy='450.211' r='20.00' style='fill:rgb(0,140,160); mix-blend-mode: screen;'/>
+   <circle cx='882.443' cy='421.803' r='20.00' style='fill:rgb(0,150,170); mix-blend-mode: screen;'/>
+   <circle cx='838.197' cy='377.557' r='20.00' style='fill:rgb(0,160,180); mix-blend-mode: screen;'/>
+   <circle cx='809.789' cy='321.803' r='20.00' style='fill:rgb(0,170,190); mix-blend-mode: screen;'/>
+   <circle cx='800.000' cy='260.000' r='20.00' style='fill:rgb(0,180,200); mix-blend-mode: screen;'/>
+   <circle cx='809.789' cy='198.197' r='20.00' style='fill:rgb(0,190,210); mix-blend-mode: screen;'/>
+   <circle cx='838.197' cy='142.443' r='20.00' style='fill:rgb(0,200,220); mix-blend-mode: screen;'/>
+   <circle cx='882.443' cy='98.197' r='20.00' style='fill:rgb(0,210,230); mix-blend-mode: screen;'/>
+   <circle cx='938.197' cy='69.789' r='20.00' style='fill:rgb(0,220,240); mix-blend-mode: screen;'/>
+   <circle cx='1000.000' cy='60.000' r='20.00' style='fill:rgb(0,230,250); mix-blend-mode: screen;'/>
+   <circle cx='1061.804' cy='69.789' r='20.00' style='fill:rgb(0,240,260); mix-blend-mode: screen;'/>
+   <circle cx='1117.557' cy='98.197' r='20.00' style='fill:rgb(0,250,270); mix-blend-mode: screen;'/>
+   <circle cx='1161.803' cy='142.443' r='20.00' style='fill:rgb(0,260,280); mix-blend-mode: screen;'/>
+   <circle cx='1190.211' cy='198.197' r='20.00' style='fill:rgb(0,270,290); mix-blend-mode: screen;'/>
+   <circle cx='460.000' cy='1000.000' r='20.00' style='fill:rgb(0,80,100); mix-blend-mode: screen;'/>
+   <circle cx='450.211' cy='1061.803' r='20.00' style='fill:rgb(0,90,110); mix-blend-mode: screen;'/>
+   <circle cx='421.803' cy='1117.557' r='20.00' style='fill:rgb(0,100,120); mix-blend-mode: screen;'/>
+   <circle cx='377.557' cy='1161.804' r='20.00' style='fill:rgb(0,110,130); mix-blend-mode: screen;'/>
+   <circle cx='321.803' cy='1190.211' r='20.00' style='fill:rgb(0,120,140); mix-blend-mode: screen;'/>
+   <circle cx='260.000' cy='1200.000' r='20.00' style='fill:rgb(0,130,150); mix-blend-mode: screen;'/>
+   <circle cx='198.197' cy='1190.211' r='20.00' style='fill:rgb(0,140,160); mix-blend-mode: screen;'/>
+   <circle cx='142.443' cy='1161.803' r='20.00' style='fill:rgb(0,150,170); mix-blend-mode: screen;'/>
+   <circle cx='98.197' cy='1117.557' r='20.00' style='fill:rgb(0,160,180); mix-blend-mode: screen;'/>
+   <circle cx='69.789' cy='1061.804' r='20.00' style='fill:rgb(0,170,190); mix-blend-mode: screen;'/>
+   <circle cx='60.000' cy='1000.000' r='20.00' style='fill:rgb(0,180,200); mix-blend-mode: screen;'/>
+   <circle cx='69.789' cy='938.197' r='20.00' style='fill:rgb(0,190,210); mix-blend-mode: screen;'/>
+   <circle cx='98.197' cy='882.443' r='20.00' style='fill:rgb(0,200,220); mix-blend-mode: screen;'/>
+   <circle cx='142.443' cy='838.197' r='20.00' style='fill:rgb(0,210,230); mix-blend-mode: screen;'/>
+   <circle cx='198.197' cy='809.789' r='20.00' style='fill:rgb(0,220,240); mix-blend-mode: screen;'/>
+   <circle cx='260.000' cy='800.000' r='20.00' style='fill:rgb(0,230,250); mix-blend-mode: screen;'/>
+   <circle cx='321.803' cy='809.789' r='20.00' style='fill:rgb(0,240,260); mix-blend-mode: screen;'/>
+   <circle cx='377.557' cy='838.197' r='20.00' style='fill:rgb(0,250,270); mix-blend-mode: screen;'/>
+   <circle cx='421.803' cy='882.443' r='20.00' style='fill:rgb(0,260,280); mix-blend-mode: screen;'/>
+   <circle cx='450.211' cy='938.197' r='20.00' style='fill:rgb(0,270,290); mix-blend-mode: screen;'/>
 </svg>
