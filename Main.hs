@@ -15,6 +15,14 @@ type Circle    = (Point,Float)
 bluePalette :: Int -> Int -> Int -> [(Int,Int,Int)]
 bluePalette n ini vari = [(0, ini+i*vari, 100+i*vari) | i <- [0..n] ]
 
+-- Paleta (R, G, B) com tons de verde com azul
+purplePalette :: Int -> Int -> Int -> [(Int,Int,Int)]
+purplePalette n ini vari = [(ini+i*vari, 0, 150+i*vari) | i <- [0..n] ]
+
+-- Paleta (R, G, B) com tons de vermelho com azul
+redPalette :: Int -> Int -> Int -> [(Int,Int,Int)]
+redPalette n ini vari = [(ini+i*vari, 0, 0) | i <- [0..n] ]
+
 
 -- Paleta com n valores retirados de uma lista com sequências de R, G e B 
 rgbPalette :: Int -> [(Int,Int,Int)]
@@ -24,14 +32,14 @@ rgbPalette n = take n $ cycle [(255,0,0),(0,255,0),(0,0,255)]
 -- Geração de retângulos e circulos
 -------------------------------------------------------------------------------
 
-genRectsInDiagonal :: Int -> [Rect]
-genRectsInDiagonal n  = [((m*(w+gap), (m*(w+gap))), w+20*m, h) | m <- [0..fromIntegral (n-1)]]
+genRectsInDiagonal :: Int -> Float -> [Rect]
+genRectsInDiagonal n tam = [(((tam/2), (m*(w+gap))), w+20*m, h) | m <- [0..fromIntegral (n-1)]]
   where (w,h) = (50,50)
         gap = 5
 
-createCirc :: Float -> Int -> Int -> Int -> String
-createCirc r ncirc varX varY = 
-  printf (unlines $ ["   " ++ svgCircle ((x,y),20) (svgStyle (last (take (z+1) (bluePalette ncirc 80 10)))) | z <- [0..(ncirc-1)], x <- [(r + fromIntegral varX) + (r * (cos((fromIntegral z)*2*pi/(fromIntegral ncirc))))], y <- [(r + fromIntegral varY) + (r * (sin((fromIntegral z)*2*pi/(fromIntegral ncirc))))]])
+createCirc :: Float -> Float -> Int -> Int -> String
+createCirc r raioc ncirc varY = 
+  printf (unlines $ ["   " ++ svgCircle ((x,y),raioc) (svgStyle (last (take (z+1) (purplePalette ncirc 60 10)))) | z <- [0..(ncirc-1)], x <- [(r + 60) + (r * (cos((fromIntegral z)*2*pi/(fromIntegral ncirc))))], y <- [(r + fromIntegral varY) + (r * (sin((fromIntegral z)*2*pi/(fromIntegral ncirc))))]])
 -------------------------------------------------------------------------------
 -- Strings SVG
 -------------------------------------------------------------------------------
@@ -69,24 +77,21 @@ svgElements func elements styles = concat $ zipWith func elements styles
 -------------------------------------------------------------------------------
 -- Função principal que gera arquivo com imagem SVG
 -------------------------------------------------------------------------------
-img1 :: IO ()
-img1 = do
-  writeFile "img1.svg" $ svgstrs
-  where svgstrs = svgBegin w h ++ svgfigs ++ createCirc r c desX desY ++ createCirc r c desX2 desY2 ++ svgEnd
-        svgfigs = svgElements svgRect rects (map svgStyle palette)
-        rects = genRectsInDiagonal nrects
-        palette = bluePalette nrects ini variancia
-        nrects = 20
-        ini = 10
-        variancia = 10
-        r = 200
-        c = 20
-        desX = 800
-        desY = 60
-        desX2 = 60
-        desY2 = 800
-        (w,h) = (1400,1500) 
-
-main :: IO()
+main :: IO ()
 main = do
-  img1
+  writeFile "img1.svg" $ svgstrs
+  where svgstrs = svgBegin w h ++ svgfigs ++ createCirc r raioc c desY ++ createCirc r2 raioc c2 desY2 ++ svgEnd
+        svgfigs = svgElements svgRect rects (map svgStyle palette)
+        rects = genRectsInDiagonal nrects w
+        palette = purplePalette nrects ini vari
+        nrects = 24                                 --num de retangulos
+        ini = 10                                    --inicio paleta de cor
+        vari = 10                                   --variancia na paleta de cor
+        r = 200                                     --raio total do prim circulo
+        raioc = 40                                  --raio de cada circulo
+        c = 20                                      --quantidade de ciruclos
+        r2 = 200                                    --raio total do seg circulo
+        c2 = 10                                     --quantidade de circulo
+        desY = 40                                   --desloc em y do prim circ
+        desY2 = 800                                 --desloc em y do seg circ
+        (w,h) = (1400,1400)                         --tamanho da imagem
