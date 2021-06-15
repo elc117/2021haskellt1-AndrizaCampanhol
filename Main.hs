@@ -79,19 +79,18 @@ svgElements func elements styles = concat $ zipWith func elements styles
 -------------------------------------------------------------------------------
 main :: IO ()
 main = do
-  writeFile "img1.svg" $ svgstrs
-  where svgstrs = svgBegin w h ++ svgfigs ++ createCirc r raioc c desY ++ createCirc r2 raioc c2 desY2 ++ svgEnd
+  writeFile "img.svg" $ svgstrs
+  where svgstrs = svgBegin w h ++ svgfigs ++ createCirc r raioc c desY ++ createCirc r raioc c2 desY2 ++ svgEnd
         svgfigs = svgElements svgRect rects (map svgStyle palette)
         rects = genRectsInDiagonal nrects w
         palette = purplePalette nrects ini vari
         nrects = 24                                 --num de retangulos
         ini = 10                                    --inicio paleta de cor
         vari = 10                                   --variancia na paleta de cor
-        r = 200                                     --raio total do prim circulo
+        r = 200                                     --raio total do circulo
         raioc = 40                                  --raio de cada circulo
-        c = 20                                      --quantidade de ciruclos
-        r2 = 200                                    --raio total do seg circulo
-        c2 = 10                                     --quantidade de circulo
+        c = 20                                      --quantidade de circulos
+        c2 = div c 2                                --quantidade de circulos
         desY = 40                                   --desloc em y do prim circ
         desY2 = 800                                 --desloc em y do seg circ
         (w,h) = (1400,1400)                         --tamanho da imagem
